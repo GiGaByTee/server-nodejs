@@ -1,4 +1,4 @@
-
+var cool = require('cool-ascii-faces');
 var express = require('express');
 var cors = require('cors')
 var app = express();
@@ -10,7 +10,9 @@ var port = process.env.PORT || 8080;
 
 var teams = require('./team.json');
 
-
+app.get('/cool', function(request, response) {
+    response.send(cool());
+  });
 
 app.listen(port);
 console.log('Server started! At http://localhost:' + port);
